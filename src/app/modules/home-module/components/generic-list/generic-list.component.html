@@ -1,1 +1,11 @@
-<p>generic-list works!</p>
+<p>Trending</p>
+<owl-carousel-o [options]="carouselOptions">
+    <ng-container *ngFor="let movie of movies"> 
+      <ng-template carouselSlide>
+        <img [src]="'https://www.themoviedb.org/t/p/w220_and_h330_face/' + movie?.poster_path" alt="{{ movie.title }}" />
+        <p>{{ movie.title }}</p>
+        <p>{{movie.release_date}}</p>
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+  

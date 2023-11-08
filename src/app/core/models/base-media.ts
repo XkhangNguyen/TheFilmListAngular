@@ -8,5 +8,5 @@ export interface BaseMedia {
     posterPath: string;
     voteAverage: number;
     genreIds: number[];
-    actors: Person[],   
+    actors: Person[],
 }
