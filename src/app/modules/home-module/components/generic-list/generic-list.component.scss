@@ -1,0 +1,25 @@
+
+  .owl-theme .owl-nav .owl-next, 
+  .owl-theme .owl-nav .owl-prev
+  {
+    background-color: red;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    position: absolute;
+    top: 35%;
+    transform: translateY(-50%);
+  }
+
+  .owl-theme .owl-nav .owl-next{
+    right: 0;
+  }
+
+  .owl-theme .owl-nav .owl-prev
+  {
+    left: 0;
+  }
+
+  .owl-carousel .owl-stage-outer {
+    margin: 0 100px;
+  }
