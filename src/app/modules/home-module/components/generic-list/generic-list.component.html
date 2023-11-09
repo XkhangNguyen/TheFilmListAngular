@@ -1,11 +1,34 @@
-<p>Trending</p>
-<owl-carousel-o [options]="carouselOptions">
-    <ng-container *ngFor="let movie of movies"> 
-      <ng-template carouselSlide>
-        <img [src]="'https://www.themoviedb.org/t/p/w220_and_h330_face/' + movie?.poster_path" alt="{{ movie.title }}" />
-        <p>{{ movie.title }}</p>
-        <p>{{movie.release_date}}</p>
-      </ng-template>
-    </ng-container>
-  </owl-carousel-o>
-  
+<div class="placeholder">
+
+</div>
+
+<div class="fixed-container">
+  <div class="trending-container">
+    <div class="carousel-container">
+      <owl-carousel-o #carousel [options]="carouselOptions">
+        <ng-container *ngFor="let movie of movies"> 
+          <ng-template carouselSlide>
+            <div class="carousel-item">
+              <img [src]="'https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces' + movie?.backdrop_path" alt="{{ movie.title }}" />
+              <div class="movie-details-container">
+                <p>Trending</p>
+                <p>{{ movie.title }}</p>
+                <p>{{ movie.release_date }}</p>
+              </div>
+              <div class="overlay"></div>
+            </div>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+    </div>
+
+    <div class="nav-button-container">
+      <div class="button-container">
+        <button (click)="moveToPrevSlide()">&#8249;</button>
+      </div>
+      <div class="button-container">
+        <button (click)="moveToNextSlide()">&#8250;</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { TmdbService } from 'src/app/core/services/TMDB/tmdb.service';
-import { OwlOptions } from 'ngx-owl-carousel-o';
+import { OwlOptions, CarouselComponent } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-generic-list',
@@ -11,30 +11,18 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 export class GenericListComponent implements OnInit {
   movies: any;
 
+  @ViewChild('carousel') 
+  carousel! : CarouselComponent;
+  
   carouselOptions: OwlOptions = {
     loop: true,
     mouseDrag: false,
     touchDrag: false,
     pullDrag: false,
-    autoplay: true,
-    responsive: {
-      0: {
-        items: 1
-      },
-      400: {
-        items: 3
-      },
-      740: {
-        items: 5
-      },
-      940: {
-        items: 10
-      }
-    },
-    margin: 10,
-    nav: true,
-    navText: ['&#8249', '&#8250;'],
+    autoplay: false,
+    items:1,
     dots: false,
+    margin: 0,
   }
   
   constructor(private tmdbService: TmdbService) {}
@@ -51,5 +39,13 @@ export class GenericListComponent implements OnInit {
         this.movies = res.results;
       }
     );
+  }
+
+  moveToNextSlide() {
+    this.carousel.next();
+  }
+
+  moveToPrevSlide() {
+    this.carousel.prev();
   }
 }
