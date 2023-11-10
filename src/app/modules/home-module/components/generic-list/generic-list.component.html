@@ -11,9 +11,12 @@
             <div class="carousel-item">
               <img [src]="'https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces' + movie?.backdrop_path" alt="{{ movie.title }}" />
               <div class="movie-details-container">
-                <p>Trending</p>
-                <p>{{ movie.title }}</p>
-                <p>{{ movie.release_date }}</p>
+                <div class="tagline-container">
+                  <div class="line-tag">&nbsp;</div>
+                  <p class="tagline">TRENDING</p>
+                </div>
+                <p class="movie-title">{{ movie.title }}</p>
+                <p class="'movie-release">{{ movie.release_date }}</p>
               </div>
               <div class="overlay"></div>
             </div>

@@ -31,16 +31,49 @@
 }
 
 .movie-details-container {
-  color: white;
   position: absolute;
   top: 50%;
   left: 20%;
+  width: 40%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  background-color: red($color: #000000);
-  z-index: 2,
+  z-index: 2;
+  transform: translate(0, -50%);
+}
+
+.movie-details-container p {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-family: 'MuseoSans';
+}
+
+.tagline-container{
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 5px;
+}
+
+.tagline {
+  font-weight: 900;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 3px;
+}
+
+.line-tag{
+  font-weight: 600;
+  font-size: 15px;
+  width: 3px;
+  margin-right: 5px;
+  background-color: red;
+}
+
+.movie-title{
+  font-weight: 600;
+  font-size: 50px;
+  color: white;
 }
 
 .button-container {
