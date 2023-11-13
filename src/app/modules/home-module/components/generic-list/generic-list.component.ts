@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { TmdbService } from 'src/app/core/services/TMDB/tmdb.service';
 import { OwlOptions, CarouselComponent } from 'ngx-owl-carousel-o';
+import { Observable, map } from 'rxjs';
 
 @Component({
   selector: 'app-generic-list',
@@ -36,6 +37,16 @@ export class GenericListComponent implements OnInit {
       (res: any) => {
         this.movies = res.results;
       }
+    );
+  }
+
+  fetchTrailer(id: number): Observable<string | undefined> {
+    return this.tmdbService.getMovieVideos(id).pipe(
+      map((res: any) => {
+        const videos = res.results;
+        const trailerVideo = videos.find((video: any) => video.type === "Trailer");
+        return trailerVideo ? trailerVideo.key : undefined;
+      })
     );
   }
 
