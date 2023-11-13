@@ -38,7 +38,7 @@ export class GenericListComponent implements OnInit {
     });
   }
 
-  fetchTrailer(id: number): Observable<string | undefined> {
+  getTrailerVideoKey(id: number): Observable<string | undefined> {
     return this.tmdbService.getMovieVideos(id).pipe(
       map((res: any) => {
         const videos = res.results;

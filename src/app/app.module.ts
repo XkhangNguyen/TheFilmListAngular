@@ -11,12 +11,8 @@ import { MediaItemComponent } from './shared/media-item/media-item.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeModule } from './modules/home-module/home/home.module';
 
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    MediaItemComponent,
-  ],
+  declarations: [AppComponent, MediaItemComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -31,6 +27,6 @@ import { HomeModule } from './modules/home-module/home/home.module';
       multi: true,
     },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
