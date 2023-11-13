@@ -16,7 +16,13 @@
                   <p class="tagline">TRENDING</p>
                 </div>
                 <p class="movie-title">{{ movie.title }}</p>
-                <p class="'movie-release">{{ movie.release_date }}</p>
+                <div class="features">
+                  <div class="rate" [style.--p]="movie.vote_average * 10" style="--b:2.5px;--c:#ff7400;">{{movie.vote_average}}</div>
+                  <p class="score">User Score</p>
+                  <p class="movie-release">{{ movie.release_date}}</p>
+                </div>
+                <p class="movie-overview">{{movie.overview}}</p>
+                <button class="trailer-button">WATCH TRAILER</button>
               </div>
               <div class="overlay"></div>
             </div>
@@ -35,3 +41,5 @@
     </div>
   </div>
 </div>
+
+

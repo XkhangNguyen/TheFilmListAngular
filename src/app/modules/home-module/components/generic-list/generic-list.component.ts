@@ -32,9 +32,7 @@ export class GenericListComponent implements OnInit {
   }
 
   fetchTrendingMovies() {
-    const pageNumber = 1;
-
-    this.tmdbService.getTrendingMovies(pageNumber).subscribe(
+    this.tmdbService.getTrendingMovies().subscribe(
       (res: any) => {
         this.movies = res.results;
       }

@@ -18,7 +18,7 @@ export class TmdbService {
 
   constructor(private http: HttpClient) {}
 
-  getTrendingMovies(pageNumber: number): Observable<any> {
+  getTrendingMovies(): Observable<any> {
     const endpoint = '/discover/movie';
     const params = new HttpParams()
       .set('api_key', this.apiKey)
@@ -26,7 +26,6 @@ export class TmdbService {
       .set('include_video', false)
       .set('language', 'en-US')
       .set('sort_by', 'popularity.desc')
-      .set('page', pageNumber);
     return this.http.get<TmdbApiResponse>(`${this.apiUrl}${endpoint}`, {
       params,
     });
@@ -48,17 +47,16 @@ export class TmdbService {
     });
   }
 
-  getTopRatedMovies(pageNumber: number): Observable<any> {
+  getTopRatedMovies(): Observable<any> {
     const endpoint = '/discover/movie';
     const params = new HttpParams()
       .set('api_key', this.apiKey)
       .set('include_adult', true)
       .set('include_video', false)
       .set('language', 'en-US')
-      .set('sort_by', 'pvote_average.desc')
+      .set('sort_by', 'vote_average.desc')
       .set('without_genres', '99,10755')
       .set('vote_count.gte', '200')
-      .set('page', pageNumber);
     return this.http.get<TmdbApiResponse>(`${this.apiUrl}${endpoint}`, {
       params,
     });
