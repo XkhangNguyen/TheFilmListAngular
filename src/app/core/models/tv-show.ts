@@ -1,6 +1,6 @@
-import { Person } from "./person";
+import { Person } from './person';
 
 export interface TvShow {
-    firstAirDate: Date,
-    creators: Person[],
+  firstAirDate: Date;
+  creators: Person[];
 }

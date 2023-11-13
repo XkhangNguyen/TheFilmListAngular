@@ -25,20 +25,26 @@ export class TmdbService {
       .set('include_adult', true)
       .set('include_video', false)
       .set('language', 'en-US')
-      .set('sort_by', 'popularity.desc')
-    return this.http.get<TmdbApiResponse>(`${this.apiUrl}${endpoint}`, {params});
+      .set('sort_by', 'popularity.desc');
+    return this.http.get<TmdbApiResponse>(`${this.apiUrl}${endpoint}`, {
+      params,
+    });
   }
 
   getUpcomingMovies(): Observable<any> {
     const endpoint = '/movie/upcoming';
     const params = new HttpParams().set('api_key', this.apiKey);
-    return this.http.get<TmdbApiResponse>(`${this.apiUrl}${endpoint}`, {params});
+    return this.http.get<TmdbApiResponse>(`${this.apiUrl}${endpoint}`, {
+      params,
+    });
   }
 
   getNowPlayingMovies(): Observable<any> {
     const endpoint = '/movie/now_playing';
     const params = new HttpParams().set('api_key', this.apiKey);
-    return this.http.get<TmdbApiResponse>(`${this.apiUrl}${endpoint}`, {params});
+    return this.http.get<TmdbApiResponse>(`${this.apiUrl}${endpoint}`, {
+      params,
+    });
   }
 
   getTopRatedMovies(): Observable<any> {
@@ -50,14 +56,17 @@ export class TmdbService {
       .set('language', 'en-US')
       .set('sort_by', 'vote_average.desc')
       .set('without_genres', '99,10755')
-      .set('vote_count.gte', '200')
-    return this.http.get<TmdbApiResponse>(`${this.apiUrl}${endpoint}`, {params});
+      .set('vote_count.gte', '200');
+    return this.http.get<TmdbApiResponse>(`${this.apiUrl}${endpoint}`, {
+      params,
+    });
   }
 
-  getMovieVideos(id: number) : Observable<any> {
+  getMovieVideos(id: number): Observable<any> {
     const endpoint = '/movie/{id}/videos';
-    const params = new HttpParams()
-      .set('api_key', this.apiKey)
-    return this.http.get<TmdbApiResponse>(`${this.apiUrl}${endpoint}`, {params});
+    const params = new HttpParams().set('api_key', this.apiKey);
+    return this.http.get<TmdbApiResponse>(`${this.apiUrl}${endpoint}`, {
+      params,
+    });
   }
 }
