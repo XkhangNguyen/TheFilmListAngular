@@ -5,6 +5,12 @@
 <div class="fixed-container">
   <div class="trending-container">
     <div class="carousel-container">
+      <div
+      *ngIf="showYoutubePlayer"
+      class="overlay-cover"
+      (click)="onOutsideClick()"
+    ></div>
+      <app-youtube-player *ngIf="showYoutubePlayer" class="youtube-player" videoID="{{trailerVideoID}}"></app-youtube-player>
       <owl-carousel-o #carousel [options]="carouselOptions">
         <ng-container *ngFor="let movie of movies"> 
           <ng-template carouselSlide>
@@ -22,8 +28,7 @@
                   <p class="movie-release">{{ movie.release_date}}</p>
                 </div>
                 <p class="movie-overview">{{movie.overview}}</p>
-                <button class="trailer-button">WATCH TRAILER</button>
-                <youtube-player videoId="PRQCAL_RMVo"></youtube-player>
+                <button class="trailer-button" (click)="toggleYoutubePlayer(movie.id)">WATCH TRAILER</button>
               </div>
               <div class="overlay"></div>
             </div>
@@ -31,13 +36,13 @@
         </ng-container>
       </owl-carousel-o>
     </div>
-
+    
     <div class="nav-button-container">
       <div class="button-container">
-        <button (click)="moveToPrevSlide()">&#8249;</button>
+        <button (click)="moveToPrevSlide()" *ngIf="!showYoutubePlayer">&#8249;</button>
       </div>
       <div class="button-container">
-        <button (click)="moveToNextSlide()">&#8250;</button>
+        <button (click)="moveToNextSlide()" *ngIf="!showYoutubePlayer">&#8250;</button>
       </div>
     </div>
   </div>

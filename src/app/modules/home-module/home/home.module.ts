@@ -7,12 +7,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 
 @NgModule({
-  declarations: [HomeComponent, GenericListComponent],
-  imports: [
-    CommonModule,
-    CarouselModule,
-    YouTubePlayerModule,
-    YoutubePlayerComponent,
-  ],
+  declarations: [HomeComponent, GenericListComponent, YoutubePlayerComponent],
+  imports: [CommonModule, CarouselModule, YouTubePlayerModule],
 })
 export class HomeModule {}

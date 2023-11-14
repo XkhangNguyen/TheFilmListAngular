@@ -11,6 +11,8 @@ import { Observable, map } from 'rxjs';
 })
 export class GenericListComponent implements OnInit {
   movies: any;
+  showYoutubePlayer = false;
+  trailerVideoID: string | undefined;
 
   @ViewChild('carousel')
   carousel!: CarouselComponent;
@@ -38,7 +40,7 @@ export class GenericListComponent implements OnInit {
     });
   }
 
-  getTrailerVideoKey(id: number): Observable<string | undefined> {
+  getTrailerVideoKey(id: string): Observable<string | undefined> {
     return this.tmdbService.getMovieVideos(id).pipe(
       map((res: any) => {
         const videos = res.results;
@@ -50,7 +52,20 @@ export class GenericListComponent implements OnInit {
     );
   }
 
-  showYoutubePlayer() {}
+  toggleYoutubePlayer(movieId: string) {
+    this.getTrailerVideoKey(movieId).subscribe(
+      (videoKey: string | undefined) => {
+        this.trailerVideoID = videoKey;
+        this.showYoutubePlayer = true;
+      }
+    );
+  }
+
+  onOutsideClick() {
+    if (this.showYoutubePlayer) {
+      this.showYoutubePlayer = false;
+    }
+  }
 
   moveToNextSlide() {
     this.carousel.next();

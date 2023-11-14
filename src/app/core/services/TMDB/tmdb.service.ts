@@ -62,8 +62,8 @@ export class TmdbService {
     });
   }
 
-  getMovieVideos(id: number): Observable<any> {
-    const endpoint = '/movie/{id}/videos';
+  getMovieVideos(id: string): Observable<any> {
+    const endpoint = `/movie/${id}/videos`;
     const params = new HttpParams().set('api_key', this.apiKey);
     return this.http.get<TmdbApiResponse>(`${this.apiUrl}${endpoint}`, {
       params,
