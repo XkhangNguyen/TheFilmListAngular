@@ -3,10 +3,9 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
 import { Observable, map } from 'rxjs';
-import { Movie } from '../../models/movie';
 
 interface TmdbApiResponse {
-  results: Movie[];
+  results: any[];
 }
 
 @Injectable({

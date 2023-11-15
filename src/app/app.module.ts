@@ -1,18 +1,19 @@
+// Angular import
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { ErrorHandlerService } from './core/services/error-handler/error-handler.service';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { MediaItemComponent } from './shared/media-item/media-item.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// Third-party import
+
+// Local import
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ErrorHandlerService } from './core/services/error-handler/error-handler.service';
 import { HomeModule } from './modules/home-module/home/home.module';
 
 @NgModule({
-  declarations: [AppComponent, MediaItemComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
