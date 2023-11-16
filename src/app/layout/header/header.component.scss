@@ -1,0 +1,16 @@
+header.sticky {
+  color: red;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: yellow;
+  z-index: 4;
+}
+
+header {
+  position: relative;
+  color: red;
+  z-index: 4;
+  top: 50px;
+  transition: background-color 0.2s;
+}

@@ -1,29 +1,35 @@
-@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
-@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
+@import "ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
 
 @font-face {
-  font-family: 'MuseoSans';
-  src: url('./assets/fonts/MuseoSans_500.otf') format('opentype');
+  font-family: "MuseoSans";
+  src: url("./assets/fonts/MuseoSans_500.otf") format("opentype");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'MuseoSans';
-  src: url('./assets/fonts/MuseoSans_700.otf') format('opentype');
+  font-family: "MuseoSans";
+  src: url("./assets/fonts/MuseoSans_700.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'MuseoSans';
-  src: url('./assets/fonts/MuseoSans_900.otf') format('opentype');
+  font-family: "MuseoSans";
+  src: url("./assets/fonts/MuseoSans_900.otf") format("opentype");
   font-weight: 900;
   font-style: normal;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background-color: black;
-  }
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
