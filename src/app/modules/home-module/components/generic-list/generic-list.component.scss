@@ -57,7 +57,7 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
-  margin:0;
+  margin-bottom:10px;
 }
 
 .tagline-container{
@@ -162,6 +162,7 @@
 .features{
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .score{
