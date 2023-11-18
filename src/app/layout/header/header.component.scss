@@ -82,10 +82,12 @@ nav a:after {
   position: absolute;
   width: 100%;
   transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
+  height: 5px;
+  bottom: -3px;
   left: 0;
-  background-color: yellow;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.8), 0 0 20px rgba(255, 255, 0, 0.8),
+    0 0 30px rgba(255, 255, 0, 0.8), 0 0 40px rgba(255, 255, 0, 0.8);
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
@@ -111,11 +113,11 @@ nav a:hover:after {
   margin-left: 8px;
   font-size: 30px;
   margin: 20px;
-  transition: font-size 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .third-part button:hover {
-  font-size: 40px;
+  transform: scale(1.5);
 }
 
 .search {

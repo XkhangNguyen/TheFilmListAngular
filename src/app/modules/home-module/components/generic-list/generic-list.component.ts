@@ -2,7 +2,8 @@ import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { TmdbService } from 'src/app/core/services/TMDB/tmdb.service';
 import { OwlOptions, CarouselComponent } from 'ngx-owl-carousel-o';
 import { Observable, map } from 'rxjs';
-
+import { LockScrollService } from 'src/app/core/services/lock-scroll/lock-scroll.service';
+import { HideComponentService } from 'src/app/core/services/hide-component/hide-component.service';
 @Component({
   selector: 'app-generic-list',
   templateUrl: './generic-list.component.html',
@@ -28,7 +29,11 @@ export class GenericListComponent implements OnInit {
     margin: 0,
   };
 
-  constructor(private tmdbService: TmdbService) {}
+  constructor(
+    private tmdbService: TmdbService,
+    private lockScrollService: LockScrollService,
+    private hideComponentService: HideComponentService
+  ) {}
 
   ngOnInit(): void {
     this.fetchTrendingMovies();
@@ -52,7 +57,9 @@ export class GenericListComponent implements OnInit {
     );
   }
 
-  toggleYoutubePlayer(movieId: string) {
+  openYoutubePlayer(movieId: string) {
+    this.lockScrollService.lockScroll();
+    this.hideComponentService.hideComponent(true);
     this.getTrailerVideoKey(movieId).subscribe(
       (videoKey: string | undefined) => {
         this.trailerVideoID = videoKey;
@@ -62,9 +69,9 @@ export class GenericListComponent implements OnInit {
   }
 
   onOutsideClick() {
-    if (this.showYoutubePlayer) {
-      this.showYoutubePlayer = false;
-    }
+    this.showYoutubePlayer = false;
+    this.lockScrollService.unlockScroll();
+    this.hideComponentService.hideComponent(false);
   }
 
   moveToNextSlide() {

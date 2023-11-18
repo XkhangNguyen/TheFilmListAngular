@@ -5,24 +5,23 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Third-party import
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 // Local import
 import { AppRoutingModule } from './app-routing.module';
 import { ErrorHandlerService } from './core/services/error-handler/error-handler.service';
 import { HomeModule } from './modules/home-module/home/home.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './layout/header/header.component';
-import { FooterComponent } from './layout/footer/footer.component';
+import { SharedModule } from './shared/components/shared-module/shared.module';
+
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
     HomeModule,
-    FontAwesomeModule,
+    SharedModule,
   ],
   providers: [
     {
