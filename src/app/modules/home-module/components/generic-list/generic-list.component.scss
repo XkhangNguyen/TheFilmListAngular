@@ -10,7 +10,7 @@
   object-fit: cover;
 }
 
-.trending-container{
+.trending-container {
   position: static;
   background-color: transparent;
   display: flex;
@@ -42,25 +42,26 @@
   z-index: 2;
   transform: translate(0, -50%);
   overflow: hidden;
-
 }
 
 .movie-details-container p {
-  font-family: 'MuseoSans';
+  font-family: "MuseoSans";
 }
 
-.movie-title{
+.movie-title {
   font-weight: 600;
+  line-height: 1.25;
   font-size: 60px;
   color: white;
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
-  margin-bottom:10px;
+  padding: 5px 15px;
+  text-shadow: 0 0 10px rgba(255, 255, 0, 0.8), 0 0 20px rgba(255, 255, 0, 0.8);
 }
 
-.tagline-container{
+.tagline-container {
   display: flex;
   align-items: baseline;
 }
@@ -72,7 +73,7 @@
   letter-spacing: 1px;
 }
 
-.line-tag{
+.line-tag {
   font-weight: 600;
   font-size: 15px;
   width: 1.5px;
@@ -80,7 +81,7 @@
   background-color: yellow;
 }
 
-.movie-release{
+.movie-release {
   color: white;
   font-size: 25px;
   margin: 0px;
@@ -88,7 +89,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-.movie-overview{
+.movie-overview {
   font-weight: normal;
   font-size: 15px;
   color: rgba(255, 255, 255, 0.7);
@@ -112,11 +113,13 @@
   height: 100%;
   z-index: 999;
   transition: color 0.3s ease, font-size 0.3s ease;
+  text-shadow: 0 0 10px rgba(255, 255, 0, 0.8), 0 0 20px rgba(255, 255, 0, 0.8);
 }
 
-.button-container button:hover{
+.button-container button:hover {
   color: yellow;
   font-size: 1000%;
+  text-shadow: 0 0 10px rgba(255, 255, 0, 0.8), 0 0 20px rgba(255, 255, 0, 0.8);
 }
 
 .overlay {
@@ -148,26 +151,31 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* Add a background color for the fixed container */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.8
+  ); /* Add a background color for the fixed container */
   z-index: 1; /* Set a high z-index to ensure it stays above other content */
 }
 
-.placeholder{
+.placeholder {
   position: relative;
   width: auto;
   height: 100vh;
   background-color: transparent;
 }
 
-.features{
+.features {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
 }
 
-.score{
+.score {
   font-size: 20px;
-  color: rgba(255, 167, 0, 1);;
+  color: rgba(255, 167, 0, 1);
   margin-right: 20px;
 }
 
@@ -183,35 +191,43 @@
   font-family: sans-serif;
   position: relative;
   color: #ff7400;
-
 }
 
 .rate:before,
 .rate:after {
-  content:"";
-  position:absolute;
-  border-radius:50%;
+  content: "";
+  position: absolute;
+  border-radius: 50%;
 }
 
 .rate:before {
-  inset:0;
-  background:
-    radial-gradient(farthest-side,var(--c) 98%,#0000) top/var(--b) var(--b) no-repeat,
-    conic-gradient(var(--c) calc(var(--p)*1%),#0000 0);
-  -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
-          mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+  inset: 0;
+  background: radial-gradient(farthest-side, var(--c) 98%, #0000) top/var(--b)
+      var(--b) no-repeat,
+    conic-gradient(var(--c) calc(var(--p) * 1%), #0000 0);
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    #0000 calc(99% - var(--b)),
+    #000 calc(100% - var(--b))
+  );
+  mask: radial-gradient(
+    farthest-side,
+    #0000 calc(99% - var(--b)),
+    #000 calc(100% - var(--b))
+  );
 }
 .rate:after {
-  inset:calc(50% - var(--b)/2);
-  background:var(--c);
-  transform:rotate(calc(var(--p)*3.6deg)) translateY(calc(50% - var(--w)/2));
+  inset: calc(50% - var(--b) / 2);
+  background: var(--c);
+  transform: rotate(calc(var(--p) * 3.6deg))
+    translateY(calc(50% - var(--w) / 2));
 }
 
-.trailer-button{
+.trailer-button {
   padding: 10px;
   margin-top: 10px;
   font-size: 25px;
-  font-family: 'MuseoSans';
+  font-family: "MuseoSans";
   font-weight: 700;
   color: black;
   background-color: yellow;
@@ -222,6 +238,7 @@
 .trailer-button:hover {
   background-color: transparent;
   color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 0, 0.8), 0 0 20px rgba(255, 255, 0, 0.8);
 }
 
 .youtube-player {

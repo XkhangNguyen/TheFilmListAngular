@@ -5,6 +5,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Third-party import
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 // Local import
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +22,7 @@ import { FooterComponent } from './layout/footer/footer.component';
     HttpClientModule,
     BrowserAnimationsModule,
     HomeModule,
+    FontAwesomeModule,
   ],
   providers: [
     {

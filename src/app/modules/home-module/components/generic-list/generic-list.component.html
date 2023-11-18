@@ -1,21 +1,29 @@
-<div class="placeholder">
-
-</div>
+<div class="placeholder"></div>
 
 <div class="fixed-container">
   <div class="trending-container">
     <div class="carousel-container">
       <div
-      *ngIf="showYoutubePlayer"
-      class="overlay-cover"
-      (click)="onOutsideClick()"
-    ></div>
-      <app-youtube-player *ngIf="showYoutubePlayer" class="youtube-player" videoID="{{trailerVideoID}}"></app-youtube-player>
+        *ngIf="showYoutubePlayer"
+        class="overlay-cover"
+        (click)="onOutsideClick()"
+      ></div>
+      <app-youtube-player
+        *ngIf="showYoutubePlayer"
+        class="youtube-player"
+        videoID="{{ trailerVideoID }}"
+      ></app-youtube-player>
       <owl-carousel-o #carousel [options]="carouselOptions">
-        <ng-container *ngFor="let movie of movies"> 
+        <ng-container *ngFor="let movie of movies">
           <ng-template carouselSlide>
             <div class="carousel-item">
-              <img [src]="'https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces' + movie?.backdrop_path" alt="{{ movie.title }}" />
+              <img
+                [src]="
+                  'https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces' +
+                  movie?.backdrop_path
+                "
+                alt="Movie Title"
+              />
               <div class="movie-details-container">
                 <div class="tagline-container">
                   <div class="line-tag">&nbsp;</div>
@@ -23,12 +31,23 @@
                 </div>
                 <p class="movie-title">{{ movie.title }}</p>
                 <div class="features">
-                  <div class="rate" [style.--p]="movie.vote_average * 10" style="--b:2.5px;--c:rgba(255, 167, 0, 1);">{{movie.vote_average}}</div>
+                  <div
+                    class="rate"
+                    [style.--p]="movie.vote_average * 10"
+                    style="--b: 2.5px; --c: rgba(255, 167, 0, 1)"
+                  >
+                    {{ movie.vote_average }}
+                  </div>
                   <p class="score">User Score</p>
-                  <p class="movie-release">{{ movie.release_date}}</p>
+                  <p class="movie-release">{{ movie.release_date }}</p>
                 </div>
-                <p class="movie-overview">{{movie.overview}}</p>
-                <button class="trailer-button" (click)="toggleYoutubePlayer(movie.id)">WATCH TRAILER</button>
+                <p class="movie-overview">{{ movie.overview }}</p>
+                <button
+                  class="trailer-button"
+                  (click)="toggleYoutubePlayer(movie.id)"
+                >
+                  WATCH TRAILER
+                </button>
               </div>
               <div class="overlay"></div>
             </div>
@@ -36,16 +55,18 @@
         </ng-container>
       </owl-carousel-o>
     </div>
-    
+
     <div class="nav-button-container">
       <div class="button-container">
-        <button (click)="moveToPrevSlide()" *ngIf="!showYoutubePlayer">&#8249;</button>
+        <button (click)="moveToPrevSlide()" *ngIf="!showYoutubePlayer">
+          &#8249;
+        </button>
       </div>
       <div class="button-container">
-        <button (click)="moveToNextSlide()" *ngIf="!showYoutubePlayer">&#8250;</button>
+        <button (click)="moveToNextSlide()" *ngIf="!showYoutubePlayer">
+          &#8250;
+        </button>
       </div>
     </div>
   </div>
 </div>
-
-

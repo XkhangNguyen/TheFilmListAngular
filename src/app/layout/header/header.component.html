@@ -1,10 +1,26 @@
 <header [class.sticky]="isSticky">
-  <img class="icon" src="../../../assets/images/icon.svg" alt="Icon">
-  <nav>
-    <ul>
-      <li><a routerLink="/">Home</a></li>
-      <li><a routerLink="/about">About</a></li>
-      <li><a routerLink="/contact">Contact</a></li>
-    </ul>
-  </nav>
+  <div class="first-part">
+    <img class="logo" src="../../../assets/images/logo.svg" alt="Logo" />
+  </div>
+  <div class="second-part">
+    <nav>
+      <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/Genre">Genre</a></li>
+        <li><a routerLink="/movies">Movies</a></li>
+        <li><a routerLink="/shows">TV Shows</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="third-part">
+    <button class="search">
+      <fa-icon [icon]="faSearch"></fa-icon>
+    </button>
+    <button class="saved">
+      <fa-icon [icon]="faBookmark"></fa-icon>
+    </button>
+    <button class="account">
+      <fa-icon [icon]="faUser"></fa-icon>
+    </button>
+  </div>
 </header>
