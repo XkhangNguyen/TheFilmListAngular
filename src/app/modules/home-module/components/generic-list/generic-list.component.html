@@ -2,7 +2,19 @@
 
 <div class="fixed-container">
   <div class="trending-container">
-    <div class="carousel-container">
+    <div class="nav-button-container">
+      <div class="button-container">
+        <button (click)="moveToPrevSlide()" *ngIf="!showYoutubePlayer">
+          &#8249;
+        </button>
+      </div>
+      <div class="button-container">
+        <button (click)="moveToNextSlide()" *ngIf="!showYoutubePlayer">
+          &#8250;
+        </button>
+      </div>
+    </div>
+    <div id="carousel-container-big-list" class="carousel-container">
       <div
         *ngIf="showYoutubePlayer"
         class="overlay-cover"
@@ -55,19 +67,6 @@
           </ng-template>
         </ng-container>
       </owl-carousel-o>
-    </div>
-
-    <div class="nav-button-container">
-      <div class="button-container">
-        <button (click)="moveToPrevSlide()" *ngIf="!showYoutubePlayer">
-          &#8249;
-        </button>
-      </div>
-      <div class="button-container">
-        <button (click)="moveToNextSlide()" *ngIf="!showYoutubePlayer">
-          &#8250;
-        </button>
-      </div>
     </div>
   </div>
 </div>

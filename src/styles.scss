@@ -1,6 +1,3 @@
-@import "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
-@import "ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
-
 @font-face {
   font-family: "MuseoSans";
   src: url("./assets/fonts/MuseoSans_500.otf") format("opentype");
@@ -19,6 +16,13 @@
   font-family: "MuseoSans";
   src: url("./assets/fonts/MuseoSans_900.otf") format("opentype");
   font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Dirtchunk";
+  src: url("./assets/fonts/Dirtchunk.otf") format("opentype");
+  font-weight: normal;
   font-style: normal;
 }
 

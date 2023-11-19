@@ -4,7 +4,19 @@
     <p class="tag">DISCOVER</p>
   </div>
 
-  <movie-list [movies]="topRatedMovies" [tag]="'TOP RATED'"></movie-list>
-  <movie-list [movies]="nowPlayingMovies" [tag]="'NOW PLAYING'"></movie-list>
-  <movie-list [movies]="upcomingMovies" [tag]="'UPCOMING'"></movie-list>
+  <movie-list
+    [movies]="topRatedMovies"
+    [tag]="'TOP RATED'"
+    [tagColor]="'#00ff9f'"
+  ></movie-list>
+  <movie-list
+    [movies]="nowPlayingMovies"
+    [tag]="'NOW PLAYING'"
+    [tagColor]="'#001eff'"
+  ></movie-list>
+  <movie-list
+    [movies]="upcomingMovies"
+    [tag]="'UPCOMING'"
+    [tagColor]="'#d600ff'"
+  ></movie-list>
 </div>

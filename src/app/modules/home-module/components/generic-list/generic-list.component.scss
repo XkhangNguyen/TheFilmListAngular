@@ -19,7 +19,7 @@
   align-items: center;
 }
 
-.carousel-container {
+#carousel-container-big-list {
   width: 100%;
 }
 
@@ -28,6 +28,7 @@
   justify-content: space-between;
   position: absolute;
   width: 100%;
+  z-index: 4;
 }
 
 .movie-details-container {
@@ -111,7 +112,6 @@
   font-size: 500%;
   color: white;
   height: 100%;
-  z-index: 999;
   transition: color 0.3s ease, font-size 0.3s ease;
   text-shadow: 0 0 10px rgba(255, 255, 0, 0.8), 0 0 20px rgba(255, 255, 0, 0.8);
 }

@@ -1,9 +1,9 @@
 <div class="list">
   <div class="tag-container">
-    <p class="tag">{{ tag }}</p>
+    <p class="tag" [ngStyle]="getDynamicStyle()">{{ tag }}</p>
   </div>
   <div class="controller-container">
-    <div class="carousel-container">
+    <div id="carousel-container-list" class="carousel-container">
       <owl-carousel-o #carousel [options]="carouselOptions">
         <ng-container *ngFor="let movie of movies">
           <ng-template carouselSlide>
@@ -15,10 +15,14 @@
 
     <div class="nav-button-container">
       <div class="button-container">
-        <button (click)="moveToPrevSlide()">&#8249;</button>
+        <button (click)="moveToPrevSlide()" [ngStyle]="getDynamicStyle()">
+          &#8249;
+        </button>
       </div>
       <div class="button-container">
-        <button (click)="moveToNextSlide()">&#8250;</button>
+        <button (click)="moveToNextSlide()" [ngStyle]="getDynamicStyle()">
+          &#8250;
+        </button>
       </div>
     </div>
   </div>

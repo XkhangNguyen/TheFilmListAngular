@@ -4,9 +4,21 @@ movie-item {
   width: 200px;
   height: 400px;
   flex-direction: column;
-  border-radius: 10px;
   margin-top: 10px;
   overflow: hidden;
+}
+
+.tag-container {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0 25px 0;
+}
+
+.tag {
+  font-size: 30px;
+  font-family: "Dirtchunk";
+  letter-spacing: 2px;
+  color: white;
 }
 
 .controller-container {
@@ -15,9 +27,10 @@ movie-item {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
-.carousel-container {
+#carousel-container-list {
   width: 100%;
   padding: 0 100px;
   position: relative;
@@ -27,8 +40,10 @@ movie-item {
   display: flex;
   justify-content: space-between;
   position: absolute;
+  transform: translateY(-40px);
   width: 100%;
 }
+
 .button-container {
   display: flex;
   align-items: center;
@@ -43,11 +58,17 @@ movie-item {
   height: 100%;
   z-index: 999;
   transition: color 0.3s ease, font-size 0.3s ease;
-  text-shadow: 0 0 10px rgba(255, 255, 0, 0.8), 0 0 20px rgba(255, 255, 0, 0.8);
 }
 
 .button-container button:hover {
-  color: yellow;
   font-size: 750%;
-  text-shadow: 0 0 10px rgba(255, 255, 0, 0.8), 0 0 20px rgba(255, 255, 0, 0.8);
+}
+
+.owl-theme .owl-dots .owl-dot span {
+  background: #494949;
+}
+
+.owl-theme .owl-dots .owl-dot.active span {
+  background: rgb(255, 189, 68);
+  box-shadow: 0 0 5px orange, 0 0 10px orange;
 }
