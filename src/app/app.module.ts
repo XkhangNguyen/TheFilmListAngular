@@ -12,6 +12,7 @@ import { ErrorHandlerService } from './core/services/error-handler/error-handler
 import { HomeModule } from './modules/home-module/home/home.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/components/shared-module/shared.module';
+import { MovieModule } from './modules/movie-module/movie/movie.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +22,7 @@ import { SharedModule } from './shared/components/shared-module/shared.module';
     HttpClientModule,
     BrowserAnimationsModule,
     HomeModule,
+    MovieModule,
     SharedModule,
   ],
   providers: [

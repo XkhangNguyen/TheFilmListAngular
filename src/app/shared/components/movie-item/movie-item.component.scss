@@ -1,5 +1,6 @@
 * {
   font-family: "MuseoSans";
+  padding-top: 10px;
 }
 
 img {
@@ -7,6 +8,8 @@ img {
   height: auto;
   object-fit: cover;
   border-radius: 10px;
+  border: 2px solid white;
+  box-shadow: 0 0 5px rgba(255, 255, 0, 0.8), 0 0 10px rgba(255, 255, 0, 0.8);
 }
 
 .title {

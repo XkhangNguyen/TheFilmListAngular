@@ -7,6 +7,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HeaderComponent } from 'src/app/layout/header/header.component';
 import { FooterComponent } from 'src/app/layout/footer/footer.component';
 import { MovieItemComponent } from '../movie-item/movie-item.component';
+import { HeaderPlaceholderComponent } from '../header-placeholder/header-placeholder.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { MovieItemComponent } from '../movie-item/movie-item.component';
     HeaderComponent,
     FooterComponent,
     MovieItemComponent,
+    HeaderPlaceholderComponent,
   ],
   imports: [CommonModule, YouTubePlayerModule, FontAwesomeModule],
   exports: [
@@ -21,6 +23,7 @@ import { MovieItemComponent } from '../movie-item/movie-item.component';
     HeaderComponent,
     FooterComponent,
     MovieItemComponent,
+    HeaderPlaceholderComponent,
   ],
 })
 export class SharedModule {}

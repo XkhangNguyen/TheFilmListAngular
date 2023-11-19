@@ -45,12 +45,9 @@
   overflow: hidden;
 }
 
-.movie-details-container p {
-  font-family: "MuseoSans";
-}
-
 .movie-title {
   font-weight: 600;
+  font-family: "MuseoSans";
   line-height: 1.25;
   font-size: 60px;
   color: white;
@@ -68,15 +65,16 @@
 }
 
 .tagline {
+  font-family: "Dirtchunk";
   font-weight: 900;
-  font-size: 15px;
+  font-size: 20px;
   color: rgba(255, 167, 0, 0.6);
-  letter-spacing: 1px;
+  letter-spacing: 3px;
 }
 
 .line-tag {
   font-weight: 600;
-  font-size: 15px;
+  font-size: 20px;
   width: 1.5px;
   margin-right: 5px;
   background-color: yellow;
@@ -84,6 +82,7 @@
 
 .movie-release {
   color: white;
+  font-family: "MuseoSans";
   font-size: 25px;
   margin: 0px;
   -webkit-text-stroke: 0.5px #fff;
@@ -91,6 +90,7 @@
 }
 
 .movie-overview {
+  font-family: "MuseoSans";
   font-weight: normal;
   font-size: 15px;
   color: rgba(255, 255, 255, 0.7);
@@ -175,6 +175,7 @@
 
 .score {
   font-size: 20px;
+  font-family: "MuseoSans";
   color: rgba(255, 167, 0, 1);
   margin-right: 20px;
 }

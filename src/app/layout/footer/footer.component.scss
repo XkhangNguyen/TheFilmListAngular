@@ -1,6 +1,11 @@
-footer{
-    z-index: 4;
-    color: red;
-    position: relative;
-    background-color: yellow;
+footer {
+  z-index: 4;
+  color: black;
+  position: relative;
+  background-color: yellow;
+  height: 10%;
+  min-height: 140px;
+  display: flex;
+  border-top: 3px solid white;
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.8), 0 0 20px rgba(255, 255, 0, 0.8);
 }
