@@ -1,9 +1,10 @@
 <app-generic-list></app-generic-list>
-<div class= "overlap-container">   
-    <p>Test</p>
-    <p>Test</p>
-    <p>Test</p>
-    <p>Test</p>
-    <p>Test</p>
-    <p>Test</p>
+<div class="overlap-container">
+  <div class="tag-container">
+    <p class="tag">DISCOVER</p>
+  </div>
+
+  <movie-list [movies]="topRatedMovies" [tag]="'TOP RATED'"></movie-list>
+  <movie-list [movies]="nowPlayingMovies" [tag]="'NOW PLAYING'"></movie-list>
+  <movie-list [movies]="upcomingMovies" [tag]="'UPCOMING'"></movie-list>
 </div>

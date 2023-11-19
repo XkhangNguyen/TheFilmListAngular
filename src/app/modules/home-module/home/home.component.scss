@@ -1,8 +1,34 @@
-.overlap-container{
-    color: black;
-    width: 100%;
-    background-color: #141104;
-    height: 1080px;
-    z-index: 3;
-    position: relative;
+.overlap-container {
+  color: yellow;
+  width: 100%;
+  height: auto;
+  background-color: #141104;
+  z-index: 3;
+  position: relative;
+  border-top: 3px solid white;
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.8), 0 0 20px rgba(255, 255, 0, 0.8);
+}
+
+.tag-container {
+  display: flex;
+  justify-content: center;
+}
+
+.tag {
+  font-size: 50px;
+  margin: 150px 0;
+  color: #fff;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px yellow, 0 0 40px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+      0 0 50px #ff4da6;
+  }
 }

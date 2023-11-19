@@ -1,0 +1,25 @@
+<div class="list">
+  <div class="tag-container">
+    <p class="tag">{{ tag }}</p>
+  </div>
+  <div class="controller-container">
+    <div class="carousel-container">
+      <owl-carousel-o #carousel [options]="carouselOptions">
+        <ng-container *ngFor="let movie of movies">
+          <ng-template carouselSlide>
+            <movie-item [movie]="movie"></movie-item>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+    </div>
+
+    <div class="nav-button-container">
+      <div class="button-container">
+        <button (click)="moveToPrevSlide()">&#8249;</button>
+      </div>
+      <div class="button-container">
+        <button (click)="moveToNextSlide()">&#8250;</button>
+      </div>
+    </div>
+  </div>
+</div>

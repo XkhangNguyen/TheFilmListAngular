@@ -1,11 +1,11 @@
-.owl-carousel .owl-item {
+.carousel-item {
   height: 100vh;
   width: 100%;
   display: flex;
 }
 
-.owl-carousel .owl-item img {
-  width: auto;
+.backdrop {
+  width: 100%;
   height: 100%;
   object-fit: cover;
 }
