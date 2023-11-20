@@ -1,14 +1,16 @@
 <header #headerElement *ngIf="isVisible" [class.sticky]="isSticky">
   <div class="first-part">
-    <img class="logo" src="../../../assets/images/logo.svg" alt="Logo" />
+    <a href="/">
+      <img class="logo" src="../../../assets/images/logo.svg" alt="Logo" />
+    </a>
   </div>
   <div class="second-part">
     <nav>
       <ul>
-        <li><a routerLink="/">Home</a></li>
-        <li><a routerLink="/Genre">Genres</a></li>
-        <li><a routerLink="/movies">Movies</a></li>
-        <li><a routerLink="/shows">TV Shows</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/Genre">Genres</a></li>
+        <li><a href="/movie">Movies</a></li>
+        <li><a href="/shows">TV Shows</a></li>
       </ul>
     </nav>
   </div>

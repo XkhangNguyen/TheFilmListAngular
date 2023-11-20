@@ -16,14 +16,15 @@ export class MovieListComponent {
   carousel!: CarouselComponent;
 
   carouselOptions: OwlOptions = {
-    loop: true,
+    loop: false,
     mouseDrag: false,
     touchDrag: false,
     pullDrag: false,
     autoplay: false,
-    items: 5,
+    items: 6,
     dots: true,
     margin: 0,
+    slideBy: 6,
   };
 
   moveToNextSlide() {

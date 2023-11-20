@@ -2,17 +2,10 @@
 
 <div class="fixed-container">
   <div class="trending-container">
-    <div class="nav-button-container">
-      <div class="button-container">
-        <button (click)="moveToPrevSlide()" *ngIf="!showYoutubePlayer">
-          &#8249;
-        </button>
-      </div>
-      <div class="button-container">
-        <button (click)="moveToNextSlide()" *ngIf="!showYoutubePlayer">
-          &#8250;
-        </button>
-      </div>
+    <div id="button-left" class="button-container-big-list">
+      <button (click)="moveToPrevSlide()" *ngIf="!showYoutubePlayer">
+        &#8249;
+      </button>
     </div>
     <div id="carousel-container-big-list" class="carousel-container">
       <div
@@ -35,14 +28,16 @@
                   'https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces' +
                   movie?.backdrop_path
                 "
-                alt="Movie Title"
+                alt="Movie Backdrop"
               />
               <div class="movie-details-container">
                 <div class="tagline-container">
                   <div class="line-tag">&nbsp;</div>
                   <p class="tagline">TRENDING</p>
                 </div>
-                <p class="movie-title">{{ movie.title }}</p>
+                <a class="movie-title-link" href="/movie/{{ movie.id }}">
+                  <p class="movie-title">{{ movie.title }}</p>
+                </a>
                 <div class="features">
                   <div
                     class="rate"
@@ -67,6 +62,11 @@
           </ng-template>
         </ng-container>
       </owl-carousel-o>
+    </div>
+    <div id="button-right" class="button-container-big-list">
+      <button (click)="moveToNextSlide()" *ngIf="!showYoutubePlayer">
+        &#8250;
+      </button>
     </div>
   </div>
 </div>

@@ -1,6 +1,20 @@
 <div class="movie-container">
   <header-placeholder></header-placeholder>
-  <div class="content-container">
-    <p>movie works</p>
+  <div class="content-container" *ngIf="movie">
+    <p class="movie-title">{{ movie.title }}</p>
+    <img
+      class="poster-img"
+      [src]="
+        'https://www.themoviedb.org/t/p/w440_and_h660_multi_faces' +
+        movie.poster_path
+      "
+      alt="Movie Poster"
+    />
+    <p class="overview">{{ movie.overview }}</p>
+    <p class="release_date">{{ movie.release_date }}</p>
+    <!-- <app-youtube-player
+      class="youtube-player"
+      videoID="{{ trailerVideoID }}"
+    ></app-youtube-player> -->
   </div>
 </div>
