@@ -1,20 +1,48 @@
 <div class="movie-container">
   <header-placeholder></header-placeholder>
-  <div class="content-container" *ngIf="movie">
-    <p class="movie-title">{{ movie.title }}</p>
-    <img
-      class="poster-img"
-      [src]="
-        'https://www.themoviedb.org/t/p/w440_and_h660_multi_faces' +
-        movie.poster_path
-      "
-      alt="Movie Poster"
-    />
-    <p class="overview">{{ movie.overview }}</p>
-    <p class="release_date">{{ movie.release_date }}</p>
-    <!-- <app-youtube-player
-      class="youtube-player"
-      videoID="{{ trailerVideoID }}"
-    ></app-youtube-player> -->
+  <div
+    class="detail-container"
+    [style.background-image]="
+      'url(https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces' +
+      movie?.backdrop_path +
+      ')'
+    "
+  >
+    <div class="content-container" *ngIf="movie">
+      <img
+        class="poster-img"
+        [src]="
+          'https://www.themoviedb.org/t/p/w440_and_h660_multi_faces' +
+          movie.poster_path
+        "
+        alt="Movie Poster"
+      />
+      <div class="features">
+        <p class="movie-title">
+          {{ movie.title }}
+        </p>
+        <p class="release_date">{{ movie.release_date }}</p>
+        <div class="score-container">
+          <div
+            class="rate"
+            [style.--p]="movie.vote_average * 10"
+            style="--b: 5px; --c: rgba(255, 167, 0, 1)"
+          >
+            {{ movie.vote_average }}
+          </div>
+          <p class="score-ui">User Score</p>
+        </div>
+        <p class="tagline">{{ movie.tagline }}</p>
+        <p class="overview-ui">Overview</p>
+        <p class="overview">
+          {{ movie.overview }}
+        </p>
+      </div>
+
+      <!-- <app-youtube-player
+        class="youtube-player"
+        videoID="{{ trailerVideoID }}"
+        ></app-youtube-player> -->
+    </div>
   </div>
 </div>

@@ -14,6 +14,7 @@ export class GenericListComponent implements OnInit {
   movies: any;
   showYoutubePlayer = false;
   trailerVideoID: string | undefined;
+  pathToMovie: string = '';
 
   @ViewChild('carousel')
   carousel!: CarouselComponent;
