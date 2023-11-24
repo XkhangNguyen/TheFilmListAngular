@@ -1,22 +1,38 @@
 @font-face {
   font-family: "MuseoSans";
-  src: url("./assets/fonts/MuseoSans_500.otf") format("opentype");
+  src: url("./assets/fonts/MuseoSans/MuseoSans_500.otf") format("opentype");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "MuseoSans";
-  src: url("./assets/fonts/MuseoSans_700.otf") format("opentype");
+  src: url("./assets/fonts/MuseoSans/MuseoSans_700.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "MuseoSans";
-  src: url("./assets/fonts/MuseoSans_900.otf") format("opentype");
+  src: url("./assets/fonts/MuseoSans/MuseoSans_900.otf") format("opentype");
   font-weight: 900;
   font-style: normal;
+}
+
+@font-face {
+  font-family: "Merriweather";
+  src: url("./assets/fonts/Merriweather/Merriweather-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Merriweather";
+  src: url("./assets/fonts/Merriweather/Merriweather-Italic.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: italic;
 }
 
 @font-face {

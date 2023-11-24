@@ -21,14 +21,14 @@
         <p class="movie-title">
           {{ movie.title }}
         </p>
-        <p class="release_date">{{ movie.release_date }}</p>
+        <p class="release-date">{{ movie.release_date }}</p>
         <div class="score-container">
           <div
             class="rate"
             [style.--p]="movie.vote_average * 10"
             style="--b: 5px; --c: rgba(255, 167, 0, 1)"
           >
-            {{ movie.vote_average }}
+            {{ movie.vote_average.toFixed(1) }}
           </div>
           <p class="score-ui">User Score</p>
         </div>

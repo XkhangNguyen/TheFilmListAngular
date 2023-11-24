@@ -39,13 +39,15 @@
   height: 100%;
   width: auto;
   border-radius: 10px;
+  border: 01px white solid;
+  box-shadow: 0px 7px 10px rgba(black, 0.5);
 }
 
 .movie-title {
   font-weight: 600;
   font-family: "MuseoSans";
   line-height: 1.25;
-  font-size: 60px;
+  font-size: 45px;
   color: white;
   overflow: hidden;
   display: -webkit-box;
@@ -57,10 +59,15 @@
   text-shadow: 0 0 10px rgba(255, 255, 0, 0.8), 0 0 20px rgba(255, 255, 0, 0.8);
 }
 
+.release-date {
+  color: #d1d100;
+}
+
 .tagline {
-  color: #a8a8a8;
+  color: #c4c4c4;
   font-style: italic;
   margin-top: 10px;
+  font-family: "Merriweather";
 }
 
 .features {
@@ -125,6 +132,7 @@
 .score-ui {
   font-family: "MuseoSans";
   color: rgba(255, 167, 0, 1);
+  font-weight: 900;
 }
 
 .overview-ui {
@@ -141,4 +149,6 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 5;
+  font-family: "Merriweather";
+  font-style: italic;
 }
