@@ -59,8 +59,42 @@
   text-shadow: 0 0 10px rgba(255, 255, 0, 0.8), 0 0 20px rgba(255, 255, 0, 0.8);
 }
 
+.info-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.dot {
+  height: 5px;
+  width: 5px;
+  margin: 0 10px;
+  background-color: yellow;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.link-container {
+  margin-top: -3px;
+}
+
 .release-date {
-  color: #d1d100;
+  font-size: 12.5px;
+}
+
+.genre-link {
+  color: yellow;
+  text-decoration: none;
+  font-size: 12.5px;
+}
+
+.genre-link:hover {
+  color: white;
+  text-shadow: 0 0 3px rgba(255, 255, 0, 0.8), 0 0 5px rgba(255, 255, 0, 0.8);
+}
+
+.runtime {
+  font-size: 12.5px;
 }
 
 .tagline {
@@ -151,4 +185,39 @@
   -webkit-line-clamp: 5;
   font-family: "Merriweather";
   font-style: italic;
+}
+
+.trailer-button {
+  padding: 10px;
+  margin: 10px 25px;
+  font-family: "MuseoSans";
+  font-weight: 700;
+  color: black;
+  background-color: yellow;
+  border: 2px solid yellow;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.trailer-button:hover {
+  background-color: transparent;
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 0, 0.8), 0 0 20px rgba(255, 255, 0, 0.8);
+}
+
+.youtube-player {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+.overlay-cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
 }

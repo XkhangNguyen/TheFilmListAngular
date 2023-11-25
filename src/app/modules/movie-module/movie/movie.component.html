@@ -1,6 +1,16 @@
 <div class="movie-container">
   <header-placeholder></header-placeholder>
   <div
+    *ngIf="showYoutubePlayer"
+    class="overlay-cover"
+    (click)="onOutsideClick()"
+  ></div>
+  <app-youtube-player
+    *ngIf="showYoutubePlayer"
+    class="youtube-player"
+    videoID="{{ trailerVideoID }}"
+  ></app-youtube-player>
+  <div
     class="detail-container"
     [style.background-image]="
       'url(https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces' +
@@ -21,7 +31,25 @@
         <p class="movie-title">
           {{ movie.title }}
         </p>
-        <p class="release-date">{{ movie.release_date }}</p>
+        <div class="info-container">
+          <span class="release-date">{{ movie.release_date }}</span>
+          <span class="dot"></span>
+          <span
+            class="link-container"
+            *ngFor="let genre of movie.genres; let last = last"
+          >
+            <a class="genre-link" href="/movie/{{ movie.id }}">{{
+              genre.name
+            }}</a>
+            <span *ngIf="!last" style="margin-right: 5px; margin-left: 2px"
+              >,
+            </span>
+          </span>
+          <span class="dot"></span>
+          <span class="runtime">{{
+            convertToHoursAndMinutes(movie.runtime)
+          }}</span>
+        </div>
         <div class="score-container">
           <div
             class="rate"
@@ -31,6 +59,9 @@
             {{ movie.vote_average.toFixed(1) }}
           </div>
           <p class="score-ui">User Score</p>
+          <button class="trailer-button" (click)="openYoutubePlayer(movie.id)">
+            WATCH TRAILER
+          </button>
         </div>
         <p class="tagline">{{ movie.tagline }}</p>
         <p class="overview-ui">Overview</p>
@@ -38,11 +69,6 @@
           {{ movie.overview }}
         </p>
       </div>
-
-      <!-- <app-youtube-player
-        class="youtube-player"
-        videoID="{{ trailerVideoID }}"
-        ></app-youtube-player> -->
     </div>
   </div>
 </div>
