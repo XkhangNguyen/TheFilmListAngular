@@ -1,19 +1,25 @@
 * {
   font-family: "MuseoSans";
-  padding-top: 10px;
+}
+
+.item {
+  display: flex;
+  width: 200px;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 a {
   text-decoration: none;
 }
 
-img {
+.poster-img {
   width: 100%;
   height: auto;
-  object-fit: cover;
   border-radius: 10px;
   border: 2px solid white;
   box-shadow: 0 0 5px rgba(255, 255, 0, 0.8), 0 0 10px rgba(255, 255, 0, 0.8);
+  background-color: red;
 }
 
 .title {

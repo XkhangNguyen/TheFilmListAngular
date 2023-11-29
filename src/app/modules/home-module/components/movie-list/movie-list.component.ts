@@ -25,6 +25,7 @@ export class MovieListComponent {
     dots: true,
     margin: 0,
     slideBy: 6,
+    navSpeed: 120,
   };
 
   moveToNextSlide() {

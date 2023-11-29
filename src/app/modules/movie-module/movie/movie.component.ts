@@ -1,18 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { TmdbService } from 'src/app/core/services/TMDB/tmdb.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, map } from 'rxjs';
 import { LockScrollService } from 'src/app/core/services/lock-scroll/lock-scroll.service';
+import { CarouselComponent, OwlOptions } from 'ngx-owl-carousel-o';
 @Component({
   selector: 'app-movie',
   templateUrl: './movie.component.html',
   styleUrl: './movie.component.scss',
+  encapsulation: ViewEncapsulation.None,
 })
 export class MovieComponent {
   movie: any;
   id!: string;
   trailerVideoID: string | undefined;
   showYoutubePlayer = false;
+
+  @ViewChild('carousel')
+  carousel!: CarouselComponent;
+
+  carouselOptions: OwlOptions = {
+    loop: false,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    autoplay: false,
+    items: 7,
+    dots: false,
+    margin: 0,
+    slideBy: 7,
+    navSpeed: 75,
+  };
 
   constructor(
     private tmdbService: TmdbService,
@@ -71,5 +89,17 @@ export class MovieComponent {
     const minutes = runtime % 60;
 
     return `${hours}h${minutes}m`;
+  }
+
+  getCastWithLimit(limit: number) {
+    return this.movie.credits.cast.slice(0, limit);
+  }
+
+  moveToNextSlide() {
+    this.carousel.next();
+  }
+
+  moveToPrevSlide() {
+    this.carousel.prev();
   }
 }

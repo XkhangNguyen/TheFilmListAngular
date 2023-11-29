@@ -7,6 +7,7 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 })
 export class MovieItemComponent implements OnChanges {
   @Input() movie: any;
+
   pathToMovie: string = '';
 
   ngOnChanges(changes: SimpleChanges) {

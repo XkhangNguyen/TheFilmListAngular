@@ -3,7 +3,7 @@
     <p class="tag" [ngStyle]="getDynamicStyle()">{{ tag }}</p>
   </div>
   <div class="controller-container">
-    <div id="carousel-container-list" class="carousel-container">
+    <div id="carousel-container-list">
       <owl-carousel-o #carousel [options]="carouselOptions">
         <ng-container *ngFor="let movie of movies">
           <ng-template carouselSlide>

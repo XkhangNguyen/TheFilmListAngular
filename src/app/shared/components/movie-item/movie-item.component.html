@@ -1,13 +1,16 @@
-<a [href]="pathToMovie">
-  <img
-    class="poster-img"
-    [src]="
-      'https://www.themoviedb.org/t/p/w440_and_h660_multi_faces' +
-      movie.poster_path
-    "
-    alt="Movie Poster"
-  />
-
-  <p class="title">{{ movie.title }}</p>
-</a>
-<p class="release">{{ movie.release_date }}</p>
+<div class="item">
+  <a [href]="pathToMovie">
+    <img
+      class="poster-img"
+      [src]="
+        'https://www.themoviedb.org/t/p/w440_and_h660_multi_faces' +
+        movie.poster_path
+      "
+      alt="Movie Poster"
+    />
+  </a>
+  <a [href]="pathToMovie">
+    <p class="title">{{ movie.title }}</p>
+  </a>
+  <p class="release">{{ movie.release_date }}</p>
+</div>

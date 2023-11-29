@@ -5,11 +5,13 @@
     class="overlay-cover"
     (click)="onOutsideClick()"
   ></div>
+
   <app-youtube-player
     *ngIf="showYoutubePlayer"
     class="youtube-player"
     videoID="{{ trailerVideoID }}"
   ></app-youtube-player>
+
   <div
     class="detail-container"
     [style.background-image]="
@@ -68,6 +70,41 @@
         <p class="overview">
           {{ movie.overview }}
         </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cast-container">
+    <div class="cast-ui">cast</div>
+    <div id="cast-carousel">
+      <owl-carousel-o #carousel [options]="carouselOptions">
+        <ng-container *ngFor="let cast of getCastWithLimit(14)">
+          <ng-template carouselSlide>
+            <div class="carousel-item">
+              <div class="carousel-item">
+                <img
+                  class="cast-image"
+                  [src]="
+                    'https://www.themoviedb.org/t/p/w138_and_h175_face/' +
+                    cast?.profile_path
+                  "
+                  alt="No image for this person"
+                />
+                <p class="cast-name">{{ cast.name }}</p>
+                <p class="cast-character">{{ cast.character }}</p>
+              </div>
+            </div>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+    </div>
+
+    <div class="nav-button-container">
+      <div class="button-container">
+        <button (click)="moveToPrevSlide()">&#8249;</button>
+      </div>
+      <div class="button-container">
+        <button (click)="moveToNextSlide()">&#8250;</button>
       </div>
     </div>
   </div>
