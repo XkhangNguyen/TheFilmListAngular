@@ -23,21 +23,26 @@
           (input)="searchWhileTyping(searchQuery.value)"
         />
       </div>
-      <div
-        class="search-result-container"
-        *ngIf="isSearchBarOn && isSearchResultOn"
-      >
-        <div class="result" *ngFor="let result of searchResults">
-          <div class="result-item">
-            <img
-              class="result-poster-img"
-              [src]="
-                'https://www.themoviedb.org/t/p/w440_and_h660_multi_faces' +
-                result.poster_path
-              "
-              alt="Movie Poster"
-            />
-            <p class="result-movie-title">{{ result.title }}</p>
+      <div class="search-result-container" *ngIf="isSearchResultOn">
+        <div class="result-item-container">
+          <div class="result-item" *ngFor="let result of searchResults">
+            <a class="movie-link" href="/movie/{{ result.id }}">
+              <img
+                class="result-poster-img"
+                [src]="
+                  'https://www.themoviedb.org/t/p/w440_and_h660_multi_faces' +
+                  result.poster_path
+                "
+                alt="Movie Poster"
+              />
+            </a>
+
+            <div class="result-movie-detail">
+              <a class="movie-link" href="/movie/{{ result.id }}">
+                <p class="result-movie-title">{{ result.title }}</p>
+              </a>
+              <p class="result-movie-release">{{ result.release_date }}</p>
+            </div>
           </div>
         </div>
       </div>

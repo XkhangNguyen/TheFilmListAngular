@@ -66,6 +66,8 @@ export class HeaderComponent implements OnInit, AfterViewInit {
       !this.searchContainer.nativeElement.contains(clickedElement)
     ) {
       this.isSearchBarOn = false;
+      this.isSearchResultOn = false;
+      this.lockScrollService.unlockScroll();
       this.searchResults = null;
     }
   }
@@ -99,6 +101,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     if (!this.isSearchBarOn) {
       setTimeout(() => {
         this.isSearchBarOn = true;
+        this.lockScrollService.lockScroll();
 
         setTimeout(() => {
           if (this.isSearchBarOn) this.searchQuery.nativeElement.focus();
@@ -109,14 +112,12 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
   searchWhileTyping(query: string): void {
     if (query.length >= 3) {
-      this.lockScrollService.lockScroll();
       this.isSearchResultOn = true;
       this.tmdbService.searchMovies(query).subscribe((res: any) => {
         this.searchResults = res.results;
       });
     } else {
       this.isSearchResultOn = false;
-      this.lockScrollService.unlockScroll();
     }
   }
 }
