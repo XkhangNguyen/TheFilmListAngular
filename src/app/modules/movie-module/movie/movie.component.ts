@@ -15,6 +15,10 @@ export class MovieComponent {
   id!: string;
   trailerVideoID: string | undefined;
   showYoutubePlayer = false;
+  casts: any;
+  directors: any;
+  budget: any;
+  revenue: any;
 
   @ViewChild('carousel')
   carousel!: CarouselComponent;
@@ -54,6 +58,10 @@ export class MovieComponent {
   fetchMovieDetails() {
     this.tmdbService.getMovieDetails(this.id).subscribe((res: any) => {
       this.movie = res;
+      this.getCastWithLimit(14);
+      this.getDirectorsWithLimit(7);
+      this.budget = this.movie.budget.toLocaleString();
+      this.revenue = this.movie.revenue.toLocaleString();
     });
   }
 
@@ -92,7 +100,13 @@ export class MovieComponent {
   }
 
   getCastWithLimit(limit: number) {
-    return this.movie.credits.cast.slice(0, limit);
+    this.casts = this.movie.credits.cast.slice(0, limit);
+  }
+
+  getDirectorsWithLimit(limit: number) {
+    this.directors = this.movie.credits.crew
+      .filter(({ job }: { job: string }) => job === 'Director')
+      .slice(0, limit);
   }
 
   moveToNextSlide() {
@@ -101,5 +115,12 @@ export class MovieComponent {
 
   moveToPrevSlide() {
     this.carousel.prev();
+  }
+
+  getBackgroundImage(): string {
+    if (this.movie && this.movie.backdrop_path) {
+      return `url('https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces${this.movie.backdrop_path}')`;
+    }
+    return '';
   }
 }

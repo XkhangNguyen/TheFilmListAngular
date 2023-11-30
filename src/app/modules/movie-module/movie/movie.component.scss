@@ -226,18 +226,23 @@
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  margin-top: 50px;
 }
 
-.cast-ui {
+.additional-info-ui {
   font-family: "MuseoSans";
   position: relative;
+  font-size: 35px;
+  margin-left: 25px;
+  margin-top: 50px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 10px #00ff9f, 0 0 20px #00ff9f;
 }
 
 #cast-carousel {
   width: 90vw;
   margin-left: 5vw;
-  padding: 0 5vw;
+  padding-left: 2.5vw;
 }
 
 .carousel-item {
@@ -272,6 +277,7 @@
   height: 100%;
   z-index: 999;
   transition: color 0.3s ease, font-size 0.3s ease;
+  text-shadow: 0 0 10px #00ff9f, 0 0 20px #00ff9f;
 }
 
 .button-container button:hover {
@@ -282,4 +288,55 @@
   height: 10vw;
   border-radius: 10px;
   border: 1px white solid;
+}
+
+.cast-name {
+  margin-top: 10px;
+  max-height: 40px;
+  overflow: hidden;
+}
+
+.cast-character {
+  max-height: 40px;
+  overflow: hidden;
+}
+
+.info-title {
+  font-family: "MuseoSans";
+  font-size: 25px;
+  margin-left: 25px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 10px #d600ff, 0 0 20px #d600ff;
+}
+
+.info-value {
+  font-family: "MuseoSans";
+  font-size: 15px;
+  margin-left: 25px;
+}
+
+.director {
+  display: flex;
+  flex-direction: row;
+  margin-left: 7.5vw;
+}
+
+.director-item {
+  font-family: "MuseoSans";
+  width: 8vw;
+  margin-top: 20px;
+  margin-right: 4.5vw;
+}
+
+.director-image {
+  height: 10vw;
+  border-radius: 10px;
+  border: 1px white solid;
+}
+
+.director-name {
+  margin-top: 10px;
+  max-height: 40px;
+  overflow: hidden;
 }

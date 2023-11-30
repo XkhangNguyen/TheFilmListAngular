@@ -6,10 +6,12 @@ import {
   AfterViewInit,
   OnInit,
 } from '@angular/core';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faBookmark, faUser } from '@fortawesome/free-regular-svg-icons';
 import { HideComponentService } from 'src/app/core/services/hide-component/hide-component.service';
 import { NavigationEnd, Router } from '@angular/router';
+import { TmdbService } from 'src/app/core/services/TMDB/tmdb.service';
+import { LockScrollService } from 'src/app/core/services/lock-scroll/lock-scroll.service';
 
 @Component({
   selector: 'app-header',
@@ -18,20 +20,29 @@ import { NavigationEnd, Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit, AfterViewInit {
   @ViewChild('headerElement') headerElement!: ElementRef;
+  @ViewChild('searchQuery') searchQuery!: ElementRef;
+  @ViewChild('searchContainer') searchContainer!: ElementRef;
+  @ViewChild('searchButton') searchButton!: ElementRef;
 
   isSticky: boolean = false;
   isVisible = true;
   minHeightValue!: number;
   isHomePage: boolean = false;
+  isSearchBarOn: boolean = false;
+  searchResults: any;
+  isSearchResultOn: any;
 
   faSearch = faSearch;
   faBookmark = faBookmark;
   faUser = faUser;
+  faTimes = faTimes;
 
   constructor(
     private el: ElementRef,
     private router: Router,
-    private hideComponentService: HideComponentService
+    private lockScrollService: LockScrollService,
+    private hideComponentService: HideComponentService,
+    private tmdbService: TmdbService
   ) {}
 
   @HostListener('window:scroll', ['$event'])
@@ -46,14 +57,24 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     }
   }
 
+  @HostListener('document:click', ['$event'])
+  onClick(event: Event): void {
+    const clickedElement = event.target as HTMLElement;
+
+    if (
+      this.isSearchBarOn &&
+      !this.searchContainer.nativeElement.contains(clickedElement)
+    ) {
+      this.isSearchBarOn = false;
+      this.searchResults = null;
+    }
+  }
+
   ngOnInit() {
-    // Initial check for home page
     this.isHomePage = this.router.url === '/';
 
-    // Listen to route changes
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        // Check if the new route is the home page
         this.isHomePage = this.router.url === '/';
         this.checkScroll();
       }
@@ -72,5 +93,30 @@ export class HeaderComponent implements OnInit, AfterViewInit {
       this.el.nativeElement.firstElementChild
     );
     return parseFloat(computedStyle.minHeight.replace('px', ''));
+  }
+
+  toggleSearchBar() {
+    if (!this.isSearchBarOn) {
+      setTimeout(() => {
+        this.isSearchBarOn = true;
+
+        setTimeout(() => {
+          if (this.isSearchBarOn) this.searchQuery.nativeElement.focus();
+        }, 0);
+      }, 0.5);
+    }
+  }
+
+  searchWhileTyping(query: string): void {
+    if (query.length >= 3) {
+      this.lockScrollService.lockScroll();
+      this.isSearchResultOn = true;
+      this.tmdbService.searchMovies(query).subscribe((res: any) => {
+        this.searchResults = res.results;
+      });
+    } else {
+      this.isSearchResultOn = false;
+      this.lockScrollService.unlockScroll();
+    }
   }
 }

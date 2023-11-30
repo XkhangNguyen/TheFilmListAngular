@@ -4,6 +4,10 @@
   margin: 50px 0 25px 0;
 }
 
+.item {
+  width: 12vw;
+}
+
 .tag {
   font-size: 30px;
   font-family: "Dirtchunk";
@@ -25,6 +29,7 @@
   padding: 0 5vw;
   position: relative;
   z-index: 5;
+  padding-left: 5vw;
 }
 
 .nav-button-container {

@@ -59,6 +59,54 @@ header {
   height: 100%;
 }
 
+.search-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "MuseoSans";
+}
+
+.search-bar-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "MuseoSans";
+}
+.search-bar {
+  width: 100%;
+  height: 5vh;
+  font-size: 3vh;
+  padding-left: 30px;
+  color: black;
+  border-radius: 30px;
+}
+
+.search-result-container {
+  height: 0;
+  width: 100%;
+  overflow: visible;
+}
+
+.result-item {
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+}
+
+.result-poster-img {
+  width: 8vh;
+  height: 10vh;
+}
+
+.search-bar::placeholder {
+  opacity: 0.5;
+}
+
 nav {
   height: 100%;
 }

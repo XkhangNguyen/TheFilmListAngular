@@ -12,14 +12,7 @@
     videoID="{{ trailerVideoID }}"
   ></app-youtube-player>
 
-  <div
-    class="detail-container"
-    [style.background-image]="
-      'url(https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces' +
-      movie?.backdrop_path +
-      ')'
-    "
-  >
+  <div class="detail-container" [style.background-image]="getBackgroundImage()">
     <div class="content-container" *ngIf="movie">
       <img
         class="poster-img"
@@ -75,10 +68,10 @@
   </div>
 
   <div class="cast-container">
-    <div class="cast-ui">cast</div>
+    <div class="additional-info-ui">Cast</div>
     <div id="cast-carousel">
       <owl-carousel-o #carousel [options]="carouselOptions">
-        <ng-container *ngFor="let cast of getCastWithLimit(14)">
+        <ng-container *ngFor="let cast of casts">
           <ng-template carouselSlide>
             <div class="carousel-item">
               <div class="carousel-item">
@@ -106,6 +99,35 @@
       <div class="button-container">
         <button (click)="moveToNextSlide()">&#8250;</button>
       </div>
+    </div>
+  </div>
+
+  <div class="director-container">
+    <div class="additional-info-ui">Director</div>
+    <div class="director">
+      <div class="director-item" *ngFor="let director of directors">
+        <img
+          class="director-image"
+          [src]="
+            'https://www.themoviedb.org/t/p/w138_and_h175_face/' +
+            director.profile_path
+          "
+          alt="No image for this person"
+        />
+        <p class="director-name">{{ director.name }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="additional-info-container">
+    <div class="additional-info-ui">Additional Information</div>
+    <div class="info-title">Budget</div>
+    <div class="info-value">
+      {{ budget === "0" ? "Not updated yet." : "$" + budget }}
+    </div>
+    <div class="info-title">Revenue</div>
+    <div class="info-value">
+      {{ revenue === "0" ? "Not updated yet." : "$" + revenue }}
     </div>
   </div>
 </div>

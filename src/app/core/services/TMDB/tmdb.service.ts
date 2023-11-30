@@ -78,4 +78,14 @@ export class TmdbService {
       params,
     });
   }
+
+  searchMovies(query: string): Observable<any> {
+    const endpoint = `/search/movie`;
+    const params = new HttpParams()
+      .set('api_key', this.apiKey)
+      .set('query', query);
+    return this.http.get<TmdbApiResponse>(`${this.apiUrl}${endpoint}`, {
+      params,
+    });
+  }
 }

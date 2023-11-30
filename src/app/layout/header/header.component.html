@@ -5,7 +5,7 @@
     </a>
   </div>
   <div class="second-part">
-    <nav>
+    <nav *ngIf="!isSearchBarOn">
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/Genre">Genres</a></li>
@@ -13,10 +13,39 @@
         <li><a href="/shows">TV Shows</a></li>
       </ul>
     </nav>
+    <div class="search-container" #searchContainer>
+      <div *ngIf="isSearchBarOn" class="search-bar-container">
+        <input
+          class="search-bar"
+          type="text"
+          placeholder="Search for movies..."
+          #searchQuery
+          (input)="searchWhileTyping(searchQuery.value)"
+        />
+      </div>
+      <div
+        class="search-result-container"
+        *ngIf="isSearchBarOn && isSearchResultOn"
+      >
+        <div class="result" *ngFor="let result of searchResults">
+          <div class="result-item">
+            <img
+              class="result-poster-img"
+              [src]="
+                'https://www.themoviedb.org/t/p/w440_and_h660_multi_faces' +
+                result.poster_path
+              "
+              alt="Movie Poster"
+            />
+            <p class="result-movie-title">{{ result.title }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="third-part">
-    <button class="search">
-      <fa-icon [icon]="faSearch"></fa-icon>
+    <button id="search" (click)="toggleSearchBar()" #searchButton>
+      <fa-icon [icon]="isSearchBarOn ? faTimes : faSearch"></fa-icon>
     </button>
     <button class="saved">
       <fa-icon [icon]="faBookmark"></fa-icon>

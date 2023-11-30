@@ -7,7 +7,7 @@
       <owl-carousel-o #carousel [options]="carouselOptions">
         <ng-container *ngFor="let movie of movies">
           <ng-template carouselSlide>
-            <movie-item [movie]="movie"></movie-item>
+            <movie-item class="item" [movie]="movie"></movie-item>
           </ng-template>
         </ng-container>
       </owl-carousel-o>
