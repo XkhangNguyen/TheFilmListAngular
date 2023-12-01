@@ -265,3 +265,34 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 999;
 }
+
+.small-list-container {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 5vh;
+  height: 10vh;
+  width: 100vw;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.small-list {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-small-item {
+  width: 5vh;
+  margin: 1.5vh;
+  background-color: transparent;
+}
+
+.list-small-item.active {
+  scale: 1.5;
+  border: 1px solid white;
+  box-shadow: 0 0 2px rgba(255, 255, 0, 0.8), 0 0 4px rgba(255, 255, 0, 0.8);
+}

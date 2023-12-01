@@ -21,8 +21,8 @@ export class TmdbService {
     const endpoint = '/discover/movie';
     const params = new HttpParams()
       .set('api_key', this.apiKey)
-      .set('include_adult', true)
-      .set('include_video', false)
+      .set('include_adult', 'false')
+      .set('include_video', 'false')
       .set('language', 'en-US')
       .set('sort_by', 'popularity.desc');
     return this.http.get<TmdbApiResponse>(`${this.apiUrl}${endpoint}`, {
@@ -50,7 +50,7 @@ export class TmdbService {
     const endpoint = '/discover/movie';
     const params = new HttpParams()
       .set('api_key', this.apiKey)
-      .set('include_adult', true)
+      .set('include_adult', false)
       .set('include_video', false)
       .set('language', 'en-US')
       .set('sort_by', 'vote_average.desc')

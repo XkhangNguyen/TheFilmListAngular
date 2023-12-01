@@ -20,7 +20,7 @@
       ></app-youtube-player>
       <owl-carousel-o #carousel [options]="carouselOptions">
         <ng-container *ngFor="let movie of movies">
-          <ng-template carouselSlide>
+          <ng-template carouselSlide [id]="movie.id">
             <div class="carousel-item">
               <img
                 class="backdrop"
@@ -28,7 +28,6 @@
                   'https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces' +
                   movie?.backdrop_path
                 "
-                alt="Movie Backdrop"
               />
               <div class="movie-details-container">
                 <div class="tagline-container">
@@ -63,9 +62,30 @@
         </ng-container>
       </owl-carousel-o>
     </div>
+
     <div id="button-right" class="button-container-big-list">
       <button (click)="moveToNextSlide()" *ngIf="!showYoutubePlayer">
         &#8250;
+      </button>
+    </div>
+  </div>
+
+  <div class="small-list-container">
+    <div class="small-list">
+      <button
+        class="list-small-item"
+        *ngFor="let movie of movies; let i = index"
+        [ngClass]="{ active: i === activeSlideIndex }"
+        (click)="listButtonClick(movie.id, i)"
+      >
+        <img
+          class="backdrop"
+          [src]="
+            'https://www.themoviedb.org/t/p/w440_and_h660_multi_faces' +
+            movie?.poster_path
+          "
+          alt="Movie Backdrop"
+        />
       </button>
     </div>
   </div>

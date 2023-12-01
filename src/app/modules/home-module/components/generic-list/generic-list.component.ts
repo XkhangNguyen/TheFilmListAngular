@@ -15,6 +15,7 @@ export class GenericListComponent implements OnInit {
   showYoutubePlayer = false;
   trailerVideoID: string | undefined;
   pathToMovie: string = '';
+  activeSlideIndex: number = 0;
 
   @ViewChild('carousel')
   carousel!: CarouselComponent;
@@ -77,9 +78,20 @@ export class GenericListComponent implements OnInit {
 
   moveToNextSlide() {
     this.carousel.next();
+    this.activeSlideIndex += 1;
+    this.activeSlideIndex %= this.movies.length;
   }
 
   moveToPrevSlide() {
     this.carousel.prev();
+    this.activeSlideIndex -= 1;
+    this.activeSlideIndex =
+      ((this.activeSlideIndex % this.movies.length) + this.movies.length) %
+      this.movies.length;
+  }
+
+  listButtonClick(index: string, i: number) {
+    this.carousel.to(index.toString());
+    this.activeSlideIndex = i;
   }
 }
