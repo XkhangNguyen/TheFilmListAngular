@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { ErrorHandlerService } from './core/services/error-handler/error-handler.service';
 import { HomeModule } from './modules/home-module/home/home.module';
+import { ShelfModule } from './modules/shelf-module/shelf/shelf.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/components/shared-module/shared.module';
 import { MovieModule } from './modules/movie-module/movie/movie.module';
@@ -22,6 +23,7 @@ import { MovieModule } from './modules/movie-module/movie/movie.module';
     HttpClientModule,
     BrowserAnimationsModule,
     HomeModule,
+    ShelfModule,
     MovieModule,
     SharedModule,
   ],

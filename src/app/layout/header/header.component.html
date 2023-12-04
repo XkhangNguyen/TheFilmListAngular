@@ -13,7 +13,11 @@
         <li><a href="/shows">TV Shows</a></li>
       </ul>
     </nav>
-    <div class="search-container" #searchContainer>
+    <div
+      class="search-container"
+      [style.pointer-events]="isSearchBarOn ? 'all' : 'none'"
+      #searchContainer
+    >
       <div *ngIf="isSearchBarOn" class="search-bar-container">
         <input
           class="search-bar"
