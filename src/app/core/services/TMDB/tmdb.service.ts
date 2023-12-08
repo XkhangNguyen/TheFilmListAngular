@@ -17,6 +17,20 @@ export class TmdbService {
 
   constructor(private http: HttpClient) {}
 
+  getMoviesShelf(pageNumber: number): Observable<any> {
+    const endpoint = '/discover/movie';
+    const params = new HttpParams()
+      .set('api_key', this.apiKey)
+      .set('include_adult', 'false')
+      .set('include_video', 'false')
+      .set('language', 'en-US')
+      .set('sort_by', 'popularity.desc')
+      .set('page', pageNumber);
+    return this.http.get<TmdbApiResponse>(`${this.apiUrl}${endpoint}`, {
+      params,
+    });
+  }
+
   getTrendingMovies(): Observable<any> {
     const endpoint = '/discover/movie';
     const params = new HttpParams()

@@ -1,8 +1,17 @@
 <div class="shelf-container">
   <header-placeholder></header-placeholder>
   <mat-tab-group>
-    <mat-tab label="First"> <tab-content></tab-content> </mat-tab>
-
-    <mat-tab label="Third"> Content 3 </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <span class="movie-tab-label">Movies</span>
+      </ng-template>
+      <tab-content [movies]="movies"></tab-content>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <span class="show-tab-label">TV Shows</span>
+      </ng-template>
+      <tab-content></tab-content>
+    </mat-tab>
   </mat-tab-group>
 </div>
